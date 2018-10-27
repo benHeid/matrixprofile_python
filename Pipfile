@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 numpy = "*"
+pandas = "*"
+matplotlib = "*"
+sklearn = "*"
 
 [dev-packages]
 pylint = "*"
