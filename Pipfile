@@ -8,11 +8,19 @@ numpy = "*"
 pandas = "*"
 matplotlib = "*"
 sklearn = "*"
+dash = "*"
+dash-core-components = "*"
+dash-html-components = "*"
+flask-caching = "*"
+numba = "*"
+pip = "*"
+dash-table = "*"
 
 [dev-packages]
 pylint = "*"
 pytest = "*"
 pytest-cov = "*"
+rope = "*"
 
 [requires]
 python_version = "3.7"

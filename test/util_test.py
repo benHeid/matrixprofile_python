@@ -13,6 +13,7 @@ class TestUtil(object):
         a = np.array([1,2,3,1,2,3])
         b = np.array([4,5,6])
         ab = slidingDotProduct(b,a)
+        t = np.convolve(a,b)
         assert np.all(np.round(ab).astype(np.integer) == np.array([6, 17, 32, 29, 29, 32, 23, 12]))
 
     def test_timeseries_mean_stddev(self):
