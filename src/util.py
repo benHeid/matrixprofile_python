@@ -12,6 +12,8 @@ def slidingDotProduct(Q, T):
     """
     #T.resize(T.shape[0])
     #Q.resize(Q.shape[0])
+
+    n = len(T)
     m = len(Q)
     n = len(T)
     return sci.fftconvolve(Q[::-1], T)[m - 1:n]
@@ -22,6 +24,7 @@ def timeseries_mean_stddev(T : np.ndarray, lag):
     """
     n = len(T)
     t_padded = np.concatenate((np.zeros((1, )), T, np.zeros((lag, ))))
+
     t_cum = np.cumsum(t_padded)
     t2_cum = np.cumsum(t_padded * t_padded)
     t_sum = t_cum[lag:n + 1] - t_cum[:n - lag + 1] 
@@ -206,4 +209,5 @@ def _set_exclusion_zone(idx, exc_zone_len, nb, mp):
     exc_zone_start = 0 if idx < exc_zone_len else int(idx - exc_zone_len / 2)
     exc_zone_end = nb if idx > nb - exc_zone_len else int(idx + exc_zone_len / 2)
     mp[exc_zone_start : exc_zone_end] = [np.inf for i in range(exc_zone_end - exc_zone_start)]
+
 

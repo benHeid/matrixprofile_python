@@ -16,6 +16,7 @@ numba = "*"
 pip = "*"
 dash-table = "*"
 
+
 [dev-packages]
 pylint = "*"
 pytest = "*"
